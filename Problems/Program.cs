@@ -2,12 +2,10 @@
 
 namespace Problems
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
-        {
-            string Prefix(string input){
-                if(input is null){
+        public string Prefix(string input){
+                if(input == ""){
                     return "0,0:";
                 }
                 int wordlength = input.Length;
@@ -16,7 +14,12 @@ namespace Problems
                 int wordcount = splitword.Length;
                 return $"{wordlength},{wordcount}:{input}";
             }
-            Console.WriteLine("Hello World!");
+        static void Main(string[] args)
+        {
+            Program test = new Program();
+            Console.WriteLine(test.Prefix("I have 99  problems !!"));
+            Console.WriteLine(test.Prefix("Wool is not nice."));
+            Console.WriteLine(test.Prefix("....I'm fine....  "));
         }
     }
 }
